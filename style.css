@@ -17,7 +17,7 @@
 body{
     background-color: var(--clr-light-grey);
     font-family: "Poppins";
-    font-weight: 900;
+    font-weight: 950;
     font-style: italic;
 
 }
@@ -47,6 +47,8 @@ main{
 
 .form-class{
     display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
 }
 
 .inputs{
@@ -61,7 +63,7 @@ label{
 input{
     width: 50px;
     padding: 0.5rem;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .divider{
@@ -99,23 +101,33 @@ input{
 }
 
 .age-info{
-    font-size: 40px;
+    font-size: 52px;
 }
 
 .years, .Months, .Days{
     color: var(--clr-primary-purple);
+    font-weight: 900;
+    
 }
 span{
     color: var(--clr-off-black);
 }
-input{
+
+
+input[type="text"]:focus{
+    outline-width: 1px ;
+    outline-color:var(--clr-primary-purple) ;
     
 }
 
-input[type="text"]:focus{
-    border: 1px solid;
-    outline-color:var(--clr-primary-purple) ;
-    
+.errMeassage{
+    color: var(--clr-primary-red);
+    font-size: 8px;
+}
+
+.inactive{
+    /* display: none; */
+    visibility: hidden;
 }
 
 

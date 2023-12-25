@@ -33,20 +33,20 @@
         <div class="form-class">
           <div class="inputs">
             <label name="Day">Day</label>
-            <input type="text" name="BDay" required placeholder="DD" />
-            <p class="errMeassage" hidden>This field is required</p>
+            <input type="text" name="BDay" required placeholder="DD" maxlength="2"/>
+            <p class="errMeassage inactive">This field is required</p>
           </div>
 
           <div class="inputs">
             <label name="Day"> Month</label>
-            <input type="text" name="BMonth" placeholder="MM" required />
-            <p class="errMeassage" hidden>This field is required</p>
+            <input type="text" name="BMonth" placeholder="MM" required maxlength="2"/>
+            <p class="errMeassage inactive">This field is required</p>
           </div>
 
           <div class="inputs">
             <label name="Day"> Year</label>
-            <input type="text" name="BYear" placeholder="YYYY" required />
-            <p class="errMeassage" hidden>This field is required</p>
+            <input type="text" name="BYear" placeholder="YYYY" required maxlength="4"/>
+            <p class="errMeassage inactive">This field is required</p>
           </div>
 
         </div>
@@ -77,5 +77,6 @@
         >. Coded by <a href="#">Manjunath Hosamani</a>.
       </div>
     </footer>
+    <script src="./script.js"></script>
   </body>
 </html>
