@@ -102,9 +102,11 @@ input{
 
 .age-info{
     font-size: 52px;
+    /* display: flex;
+    flex-direction: column; */
 }
 
-.years, .Months, .Days{
+.Years, .Months, .Days{
     color: var(--clr-primary-purple);
     font-weight: 900;
     
