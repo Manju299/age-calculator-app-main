@@ -21,7 +21,6 @@ function calculate(){
     let ageInYear = currentYear - byear.value;
     let ageInMonths = (currentMonth + 1) - bmonth.value;
     let ageInDays = currentDay - bday.value;
-    // console.log(currentMonth)
 
     if (ageInDays < 0) {
         let daysInLastMonth = new Date(currentYear, currentMonth - 1, 0).getDate();
@@ -34,22 +33,6 @@ function calculate(){
         ageInMonths += 12;
         ageInYear--;
     }
-
-    // if(currentMonth >= bmonth.value && currentDay  >= bday.value){
-    //    ageInYear = currentYear-byear.value;
-    //    ageInMonths = currentMonth-bmonth.value;
-    // }
-    // else{
-    //     ageInYear--;
-    //     if(currentDay < bday){
-    //     ageInMonths = currentMonth - bmonth.value;
-    //     ageInMonths = 12-ageInMonths;
-    //     }
-
-    // }
-
-
-    // console.log(ageInYear +" years and months" +ageInMonths,ageInDays)
 
     return { year:ageInYear,
              month:ageInMonths,
@@ -69,31 +52,83 @@ function hideError(indexText){
 }
 
 
+function checkDate(){
+    if (inputs[0].value === "" || inputs[0].value >31 || isNaN === true){
+        showError(0);
+        return false    
+     }
+     else{
+        hideError(0)
+        return true
+     }
+
+}
+
+
+function checkMonth(){
+    if (inputs[1].value === "" || inputs[1].value >12 || isNaN === true){
+        showError(1);
+        return false    
+     }
+     else{
+        hideError(1)
+        return true
+     }
+
+}
+
+
+function checYear(){
+    if (inputs[2].value === "" || inputs[2].value > currentYear || isNaN === true){
+        showError(2);
+        return false
+        
+
+     }
+     else{
+        hideError(2)
+        return true
+     }
+
+}
+
+
 console.log(btn);
 btn.addEventListener("click", (event)=>{
     let age;
     event.preventDefault();
     console.log("Button is clicked");
-    // console.log(currentDay-bday.value);
-    // console.log(currentDay)
-    // console.log(byear.value);
-    inputs.forEach((items,index)=>{
-        if(items.value===""){
-            showError(index)
-        }
-        else{
-            hideError(index)
-            age = calculate();
-            // console.log(age)
-            ageDay.innerHTML = age.day;
-            console.log(age.day);
-            // console.log(ageDay.value);
-            ageMonth.innerHTML = age.month;
-            ageYear.innerHTML = age.year;
-            
-        }
+    age = calculate();
+    let validdate = checkDate();
+    let validMonth = checkMonth();
+    let validYear = checYear();
+    if(validdate && validMonth && validYear){
+        age = calculate();
+        ageDay.innerHTML = age.day;
+        console.log(age.day);
+        ageMonth.innerHTML = age.month;
+        ageYear.innerHTML = age.year;
+        
+    }
+    
 
-    });
+    // inputs.forEach((items,index)=>{
+    //     if(items.value===""){
+    //         showError(index)
+    //     }
+    //     else{
+    //         hideError(index)
+            
+            
+    //     }
+
+    // });
+
+    // age = calculate();
+    // ageDay.innerHTML = age.day;
+    // console.log(age.day);
+    // ageMonth.innerHTML = age.month;
+    // ageYear.innerHTML = age.year;
     
 
 
@@ -102,9 +137,6 @@ btn.addEventListener("click", (event)=>{
 })
 
 
-// inputs.forEach((item,index){
-
-// })
 
 
 

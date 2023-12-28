@@ -138,6 +138,27 @@ input[type="text"]:focus{
         min-width: 300px;
         /* width: 100%;  */
     }
+    .divider{
+        position: relative;
+    }
+    .btn-class img{
+       
+        align-items: center;
+        width: 2rem;
+        padding: 5px;
+    
+    }
+    .btn-class{
+        position: absolute;
+        margin-left: 103px;
+        width:clamp(51px, 10vw, 51px);;
+        border-radius: 50%;
+        padding: 5px;
+        background: var(--clr-primary-purple);
+        border: none;
+        transition: 1s ease-out;
+    }
+
 
 
 }
